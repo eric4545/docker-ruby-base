@@ -3,7 +3,7 @@ ARG ALPHINE_VERSION=3.8
 FROM ruby:${RUBY_VERSION}-alpine${ALPHINE_VERSION}
 
 ENV IMAGEMAGICK_VERSION=6.9.6.8-r1
-ENV POSTGRESQL_VERSION=10.8-r0
+ENV POSTGRESQL_VERSION=10.9-r0
 ENV AWS_CLI_VERSION=1.16.91
 
 RUN apk update \
@@ -19,6 +19,8 @@ RUN apk update \
        git \
        gnupg \
        tzdata \
+       ffmpeg \
+       ffmpeg-dev \
        imagemagick-dev=$IMAGEMAGICK_VERSION \
        imagemagick=$IMAGEMAGICK_VERSION \
        # in alpine3.7 postgresql is 10.5
