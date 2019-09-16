@@ -28,6 +28,7 @@ RUN apk update \
        # we need pg_dump to be available in the env
        postgresql=$POSTGRESQL_VERSION \
        py-pip \
+       ncurses \
     && \
     pip install --upgrade awscli==$AWS_CLI_VERSION && \
     apk --purge del py-pip
