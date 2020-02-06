@@ -6,13 +6,13 @@ Installed necessary package for our ruby application in alpine.
 
 ```
 # Dockerfile
-FROM eric4545/docker-ruby-base:2.5.5
+FROM neatltd/docker-ruby-base:2.5.5
 ```
 
 ## Build
 
-- `docker build -t eric4545/docker-ruby-base:latest .`
-- `docker build -t eric4545/docker-ruby-base:2.5.5 .`
+- `docker build -t neatltd/docker-ruby-base:latest .`
+- `docker build -t neatltd/docker-ruby-base:2.5.5 .`
 
 ## Reference
 
