@@ -31,4 +31,5 @@ RUN apk update \
        ncurses \
     && \
     pip install --upgrade awscli==$AWS_CLI_VERSION && \
-    apk --purge del py-pip
+    apk --purge del py-pip && \
+    gem install bundler
