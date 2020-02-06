@@ -32,4 +32,4 @@ RUN apk update \
     && \
     pip install --upgrade awscli==$AWS_CLI_VERSION && \
     apk --purge del py-pip && \
-    gem install bundler
+    gem install bundler -v '< 2.0' && gem update --system
