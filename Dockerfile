@@ -7,6 +7,8 @@ ENV POSTGRESQL_VERSION=11.6-r0
 ENV AWS_CLI_VERSION=1.16.273
 
 RUN apk update \
+    && apk add --no-cache --update \
+            less \
     # older imagemagick lies in the 3.5 ahphine registry
     && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositories \
     # POSTGRESQL_VERSION 10.7-r0 in the 3.6 ahphine registry
