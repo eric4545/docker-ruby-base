@@ -6,7 +6,9 @@ ENV IMAGEMAGICK_VERSION=6.9.10.69-r0
 ENV POSTGRESQL_VERSION=11.7-r0
 ENV AWS_CLI_VERSION=1.16.273
 
-RUN apk update \
+RUN addgroup -g 1000 ruby && \
+    adduser -u 1000 -G ruby -s /bin/sh -D ruby && \
+    apk update \
     && apk add --no-cache --update \
             less \
     # older imagemagick lies in the 3.5 ahphine registry
