@@ -36,4 +36,4 @@ RUN addgroup -g 1000 ruby && \
     && \
     pip install --upgrade awscli==$AWS_CLI_VERSION && \
     apk --purge del py-pip && \
-    gem install bundler -v '< 2.0' && gem update --system
+    gem install bundler && gem update --system
