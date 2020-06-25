@@ -1,8 +1,8 @@
 ARG RUBY_VERSION=2.5.8
-ARG ALPHINE_VERSION=3.10
+ARG ALPHINE_VERSION=3.11
 FROM ruby:${RUBY_VERSION}-alpine${ALPHINE_VERSION}
 
-ENV IMAGEMAGICK_VERSION=6.9.10.69-r0
+ENV IMAGEMAGICK_VERSION=6.9.10.75-r0
 ENV POSTGRESQL_VERSION=11.7-r0
 ENV AWS_CLI_VERSION=1.16.273
 
@@ -13,8 +13,8 @@ RUN addgroup -g 1000 ruby && \
             less \
     # older imagemagick lies in the 3.5 ahphine registry
     && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main' >> /etc/apk/repositories \
-    # POSTGRESQL_VERSION 10.7-r0 in the 3.6 ahphine registry
-    && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.7/main' >> /etc/apk/repositories \
+    # POSTGRESQL_VERSION 11.7-r0 in the 3.6 ahphine registry
+    && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.10/main' >> /etc/apk/repositories \
     && apk add --no-cache \
        build-base \
        python-dev \
