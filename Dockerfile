@@ -33,6 +33,7 @@ RUN addgroup -g 1000 ruby && \
        postgresql=$POSTGRESQL_VERSION \
        py-pip \
        ncurses \
+       curl \
     && \
     pip install --upgrade awscli==$AWS_CLI_VERSION && \
     apk --purge del py-pip && \
