@@ -3,7 +3,7 @@ ARG ALPHINE_VERSION=3.13
 FROM ruby:${RUBY_VERSION}-alpine${ALPHINE_VERSION}
 
 ENV IMAGEMAGICK_VERSION=6.9.11.55-r0
-ENV POSTGRESQL_VERSION=11.11-r0
+ENV POSTGRESQL_VERSION=13.2-r0
 ENV AWS_CLI_VERSION=1.16.273
 
 RUN addgroup -g 1000 ruby && \
@@ -11,8 +11,6 @@ RUN addgroup -g 1000 ruby && \
     apk update \
     && apk add --no-cache --update \
             less \
-    # POSTGRESQL_VERSION 11.11-r0 in the 3.6 alpine registry
-    && echo 'http://dl-cdn.alpinelinux.org/alpine/v3.10/main' >> /etc/apk/repositories \
     && apk add --no-cache \
        build-base \
        python3-dev \
