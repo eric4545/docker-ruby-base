@@ -1,10 +1,10 @@
-ARG RUBY_VERSION=2.5.8
+ARG RUBY_VERSION=2.5.9
 ARG ALPHINE_VERSION=3.13
 FROM ruby:${RUBY_VERSION}-alpine${ALPHINE_VERSION}
 
 ENV IMAGEMAGICK_VERSION=6.9.11.55-r0
-ENV POSTGRESQL_VERSION=13.2-r0
-ENV AWS_CLI_VERSION=1.19.47
+ENV POSTGRESQL_VERSION=13.3-r0
+ENV AWS_CLI_VERSION=1.19.100
 
 RUN addgroup -g 1000 ruby && \
     adduser -u 1000 -G ruby -s /bin/sh -D ruby && \
@@ -29,6 +29,6 @@ RUN addgroup -g 1000 ruby && \
        curl \
     && \
     python3 -m ensurepip --upgrade && \
-    pip3 install --upgrade awscli==$AWS_CLI_VERSION && \
+    pip3 install --no-cache-dir --upgrade awscli==$AWS_CLI_VERSION && \
     gem install bundler && \
     gem update --system
